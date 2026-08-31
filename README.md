@@ -25,32 +25,57 @@
 </p>
 
 <p align="center">
-  <a href="https://mdrbx.github.io/nerv-ui/docs"><img src="https://img.shields.io/badge/DOCUMENTATION-FF9900?style=for-the-badge&labelColor=000000" alt="Documentation" /></a>
+  <a href="https://mdrbx.github.io/nerv-ui/"><img src="https://img.shields.io/badge/LIVE_DEMO-00FFFF?style=for-the-badge&labelColor=000000" alt="Live Demo" /></a>
   &nbsp;
-  <a href="https://mdrbx.github.io/nerv-ui/examples"><img src="https://img.shields.io/badge/LIVE_EXAMPLES-00FFFF?style=for-the-badge&labelColor=000000" alt="Live Examples" /></a>
+  <a href="https://skills.sh/mdrbx/nerv-ui/nerv-ui"><img src="https://img.shields.io/badge/INSTALL_AGENT_SKILL-00FF00?style=for-the-badge&labelColor=000000" alt="Install Agent Skill" /></a>
+  &nbsp;
+  <a href="https://mdrbx.github.io/nerv-ui/docs"><img src="https://img.shields.io/badge/DOCUMENTATION-FF9900?style=for-the-badge&labelColor=000000" alt="Documentation" /></a>
 </p>
 
 ---
 
 ## `> START_IN_30_SECONDS`
 
-**NERV-UI is a production React/TypeScript component library, a published npm package, 48 documented components, and a portable `SKILL.md` for coding agents.** See the [live demo](https://mdrbx.github.io/nerv-ui/), [examples](https://mdrbx.github.io/nerv-ui/examples/), [docs](https://mdrbx.github.io/nerv-ui/docs/), [npm package](https://www.npmjs.com/package/@mdrbx/nerv-ui), or [agent skill](skills/nerv-ui/SKILL.md).
+**NERV-UI is a production React/TypeScript component library, a published npm package, 48 documented components, 18 live application examples, and a portable coding-agent skill.**
+
+- **Want an agent to build with it?** Install the skill with one command below.
+- **Want the React components?** Jump to [the npm install](#-install_in_a_react_project).
+- **Want to see it first?** Open the [live demo](https://mdrbx.github.io/nerv-ui/) or browse all [18 examples](https://mdrbx.github.io/nerv-ui/examples/).
 
 ### `> USE_WITH_AN_AI_CODING_AGENT`
 
-Codex discovers the canonical skill from [`.agents/skills/nerv-ui`](.agents/skills/nerv-ui) in this repository. To install it for a user-level Codex setup, copy the same single directory:
+Install the canonical NERV-UI skill for your coding agent:
+
+```bash
+npx skills add https://github.com/mdrbx/nerv-ui --skill nerv-ui
+```
+
+The installer discovers supported agents and lets you choose where to install the skill. You can also [inspect NERV-UI on skills.sh](https://skills.sh/mdrbx/nerv-ui/nerv-ui) before installing it.
+
+The skill tells an agent when NERV-UI fits, installs the real npm package, uses only exported components, and includes dashboard, terminal, and authentication recipes.
+
+> **Try this prompt:** “Install `@mdrbx/nerv-ui` and build an accessible operations dashboard with `DataGrid`, `Gauge`, and `BarChart`; use original labels and respect reduced motion.”
+
+<details>
+<summary>Manual agent installation</summary>
+
+Clone the repository and copy the canonical skill directory to your agent's user-level skill path:
 
 ```bash
 git clone --depth 1 https://github.com/mdrbx/nerv-ui.git /tmp/nerv-ui-skill
+
+# Codex
 mkdir -p ~/.codex/skills
 cp -R /tmp/nerv-ui-skill/skills/nerv-ui ~/.codex/skills/nerv-ui
+
+# Hermes Agent
+mkdir -p ~/.hermes/skills
+cp -R /tmp/nerv-ui-skill/skills/nerv-ui ~/.hermes/skills/nerv-ui
 ```
 
-Claude Code discovers the same source through `.claude/skills/nerv-ui`. For Hermes Agent, copy it to `~/.hermes/skills/nerv-ui` and confirm it appears in `hermes skills list`. These paths follow the current official documentation for each agent.
+Inside this repository, compatible agents can discover the same canonical source through [`.agents/skills/nerv-ui`](.agents/skills/nerv-ui) and [`.claude/skills/nerv-ui`](.claude/skills/nerv-ui).
 
-The skill tells an agent when NERV-UI fits, installs the real package, uses only exported components, and includes dashboard, terminal, and auth recipes.
-
-**Prompt → agent → application:** “Install `@mdrbx/nerv-ui` and build an accessible operations dashboard with `DataGrid`, `Gauge`, and `BarChart`; use original labels and respect reduced motion.”
+</details>
 
 ### `> INSTALL_IN_A_REACT_PROJECT`
 
